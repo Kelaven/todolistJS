@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 ul {
-  list-style: disc inside; /* enable automatic bullets for the list */
+  /* list-style: disc inside;  */
+  /* enable automatic bullets for the list */
 }

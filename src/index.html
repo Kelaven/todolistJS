@@ -7,8 +7,34 @@
     <title>To do</title>
 </head>
 
-<body>
-    <h1>Test</h1>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-lg">
+        <form>
+            <div class="mb-4">
+                <label for="inputField" class="block text-gray-700 text-sm font-bold mb-2">Ajouter une tâche :</label>
+                <div class="flex">
+                    <input type="text" id="inputField"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        placeholder="Faire les courses">
+                    <button type="button"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-7 ms-4 rounded focus:outline-none focus:shadow-outline">Ajouter</button>
+                </div>
+            </div>
+        </form>
+        <div class="py-4">
+            <ul>
+                <li>
+                    text
+                </li>
+            </ul>
+        </div>
+        <div class="flex justify-between py-4">
+            <button type="button"
+                class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Modifier</button>
+            <button type="button"
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Supprimer</button>
+        </div>
+    </div>
 
     <script type="module" src="./index.js"></script>
 </body>

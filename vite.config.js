@@ -5,4 +5,7 @@ export default defineConfig({
   build: {
     outDir: "../dist", // pour que le dossier build se place à la racine du projet
   },
+  // css: {
+  //   postcss: "./postcss.config.js",
+  // },
 });

@@ -1,3 +1,7 @@
-body {
-  background-color: lightsalmon;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul {
+  list-style: disc inside; /* enable automatic bullets for the list */
 }

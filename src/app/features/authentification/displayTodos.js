@@ -1,6 +1,6 @@
 // * Variables
 const ul = document.querySelector('ul');
-const todos = [ // créer un tableau pour contenir les todos
+export const todos = [ // créer un tableau pour contenir les todos
   { // On crée des objets car il faudra du texte et la validation ou pas de la todo
     text: "Je suis une todo",
     done: false,
@@ -20,7 +20,7 @@ export const displayTodo = () => {
     // On va donc retourner un node pour chacune des todos
     return createTodoElement(todo, index);
   });
-  ul.innerHTML = ''; // pour supprimer tout ce qu'il y a à l'intérieur
+  ul.innerHTML = ''; // pour supprimer tout ce qu'il y a déjà à l'intérieur
   ul.append(...todosNode);  // on utilise append() car il y a plusieurs éléments à ajouter et non pas un seul. Il faut mettre en paramètre une liste de nodes et non pas un tableau de nodes. Donc on utilise le spread operator pour transformer le tableau en liste (c'est indiqué au passage de la souris sur la méthode).
 };
 

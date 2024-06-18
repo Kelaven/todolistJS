@@ -2,4 +2,4 @@
 // Seul endroit où il est recommandé d'utiliser *
 
 export * from "./displayTodos.js";
-export * from "./b.js";
+export * from "./addTodos.js";

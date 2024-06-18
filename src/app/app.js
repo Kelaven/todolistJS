@@ -1,4 +1,3 @@
-import { displayTodo, logB } from "./features/authentification/index.js";
+import { displayTodo } from "./features/authentification/index.js";
 
 displayTodo();
-logB();

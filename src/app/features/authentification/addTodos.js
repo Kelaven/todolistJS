@@ -1,7 +1,3 @@
-export function logB() {
-  console.log("Module b.js");
-}
-
 import { todos, displayTodo } from "./displayTodos";
 
 

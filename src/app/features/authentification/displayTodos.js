@@ -1,3 +1,5 @@
+import { createDelBtn } from "./deleteTodos.js";
+
 // * Variables
 const ul = document.querySelector('ul');
 export const todos = [ // créer un tableau pour contenir les todos
@@ -27,15 +29,15 @@ export const displayTodo = () => {
 // fonction qui a pour un role de transformer une todo en un élément html :
 const createTodoElement = (todo, index) => {
   const li = document.createElement('li'); // création du noeud
+  const delBtn = createDelBtn(index);
   li.innerHTML = `
     <div class="flex items-center w-full">
     <span class ="todo ${todo.done ? 'done' : ''}"></span>
     <p ${todo.done ? 'class="line-through"' : ""} >${todo.text}</p>
     </div>
     <div>
-    <button type="button"
-    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Supprimer</button>
-    </div>
     `;
+  li.appendChild(delBtn); // appendChild car on a qu'un seul élément à ajouter : un btn par li
   return li;
 };
+

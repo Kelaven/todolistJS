@@ -48,7 +48,12 @@ const createTodoElement = (todo, index) => {
   li.addEventListener('click', () => { // pour qu'au click on puisse cocher la Todo
     toggleTodo(index); // closure
   });
-  li.append(editBtn, delBtn);
+  if (todo.done !== true) {
+    li.append(editBtn, delBtn);
+  } else {
+    li.appendChild(delBtn);
+  }
+
   return li;
 };
 

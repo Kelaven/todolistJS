@@ -8,6 +8,11 @@ export const createTodoEditElement = (todo, index) => {
     input.type = "text";
     input.value = todo.text;
     input.id = "inputEditBorder";
+    input.addEventListener('keydown', e => {
+        if (e.key === "Enter") {
+            editTodo(index, input); // sauvegarder les changement à l'appui sur la touche entrer du clavier
+        }
+    })
 
     const btnSave = document.createElement('button');
     btnSave.innerHTML = `

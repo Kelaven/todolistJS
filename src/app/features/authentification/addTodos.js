@@ -10,7 +10,7 @@ console.log(form, input);
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const value = input.value; // valeur entrée par l'utilisateur dans l'input
-  console.log(value);
+  // console.log(value);
   input.value = ''; // juste pour vider le texte de l'input après la validation car la page n'est pas refresh
   addTodo(value);
   displayTodo();
@@ -18,8 +18,10 @@ form.addEventListener('submit', (e) => {
 
 // to add todos :
 const addTodo = (text) => {
-  todos.push({
-    text, // écriture simplifiée de text: text,
-    done: false, // valeur par défaut : quand on ajoute une todo elle n'est pas encore faite
-  })
+  if (text !== "") { // pour empêcher d'ajouter une valeur vide
+    todos.push({
+      text, // écriture simplifiée de text: text,
+      done: false, // valeur par défaut : quand on ajoute une todo elle n'est pas encore faite
+    })
+  }
 }

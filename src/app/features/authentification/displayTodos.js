@@ -1,5 +1,5 @@
 import { createDelBtn } from "./deleteTodos.js";
-import { createTodoEditElement, createEditBtn } from "./editTodos.js";
+import { createTodoEditElement, createEditBtn, toggleEditMode } from "./editTodos.js";
 
 // * Variables
 const ul = document.querySelector('ul');
@@ -40,14 +40,26 @@ const createTodoElement = (todo, index) => {
   const editBtn = createEditBtn(index);
   li.innerHTML = `
     <div class="flex items-center w-full">
-    <span class ="todo ${todo.done ? 'done' : ''}"></span>
-    <p ${todo.done ? 'class="line-through"' : ""} >${todo.text}</p>
+    <span class="todo cursor-pointer ${todo.done ? 'done' : ''}"></span>
+    <p class="firstLetterUppercase ${todo.done ? 'line-through' : ''}">${todo.text}</p>
     </div>
     <div>
     `;
   li.addEventListener('click', () => { // pour qu'au click on puisse cocher la Todo
     toggleTodo(index); // closure
   });
+  // ? Méthode pour permettre de rentrer en mode édition au double click ou seulement barrer la todo au simple click (en jouant sur le temps de click de l'utilisateur) :
+  // let timer;
+  // li.addEventListener("click", event => {
+  //   if (event.detail === 1) {
+  //     timer = setTimeout(() => {
+  //       toggleTodo(index);
+  //     }, 150);
+  //   } else if (event.detail > 1) {
+  //     clearTimeout(timer);
+  //     toggleEditMode(index);
+  //   }
+  // });
   if (todo.done !== true) {
     li.append(editBtn, delBtn);
   } else {

@@ -25,3 +25,7 @@ li{
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+
+.firstLetterUppercase::first-letter{
+  text-transform: uppercase;
+}

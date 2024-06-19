@@ -54,7 +54,7 @@ export const createEditBtn = (index) => {
     return editBtn;
 };
 
-const toggleEditMode = index => {
+export const toggleEditMode = index => {
     todos[index].editMode = !todos[index].editMode;
     displayTodo();
 };

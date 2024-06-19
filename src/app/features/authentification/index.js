@@ -3,4 +3,3 @@
 
 export * from "./displayTodos.js";
 export * from "./addTodos.js";
-export * from "./deleteTodos.js";

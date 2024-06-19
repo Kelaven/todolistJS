@@ -20,3 +20,8 @@ li{
   justify-content: space-between;
   padding: 10px 0px;
 }
+
+#inputEditBorder{
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}

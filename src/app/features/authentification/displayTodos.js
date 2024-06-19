@@ -37,7 +37,15 @@ const createTodoElement = (todo, index) => {
     </div>
     <div>
     `;
+  li.addEventListener('click', () => { // pour qu'au click on puisse cocher la Todo
+    toggleTodo(index); // closure
+  });
   li.appendChild(delBtn); // appendChild car on a qu'un seul élément à ajouter : un btn par li
   return li;
 };
 
+// fonction pour le toggle de la Todo au click :
+const toggleTodo = (index) => {
+  todos[index].done = !todos[index].done; // on accède à la clé "done" et on la toggle grâce au ! pour passer de true à false
+  displayTodo();
+};

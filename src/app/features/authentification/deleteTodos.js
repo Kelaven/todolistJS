@@ -13,7 +13,8 @@ export const createDelBtn = (index) => {
     </div>
     `;
 
-    delBtn.addEventListener('click', () => {
+    delBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Sans e.stopPropagation(), le clic sur le bouton de suppression non seulement supprime la tâche, mais également bascule son état en raison de la propagation de l’événement de clic jusqu'au toggle défini dans displayTodos.js
         deleteTodo(index);
         // console.log(index);
     })
@@ -23,7 +24,7 @@ export const createDelBtn = (index) => {
 
 // fonction pour récupérer l'index de l'élément et le supprimer : 
 const deleteTodo = (index) => {
-    console.log(index);
+    // console.log(index);
     todos.splice(index, 1); // index sur lequel on itère, et la fonction splice supprime quand il a 2 arguments (on lui précise notamment qu'on veut supprimer 1 seul élément)
     displayTodo();
 }
@@ -31,7 +32,7 @@ const deleteTodo = (index) => {
 
 
 // ! NB :
-// Une closure est une fonction qui se souvient de son environnement lexical, même après que la fonction ait été exécutée en dehors de cet environnement. En d’autres termes, une closure permet à une fonction interne d’accéder aux variables de sa fonction parent même après que cette dernière a terminé son exécution.
+// Une closure est une fonction qui se souvient de son environnement lexical, même après que la fonction ait été exécutée en dehors de cet environnement. En d’autres termes, une closure permet à une fonction interne d’accéder aux variables de sa fonction parent même après que cette dernière ai terminé son exécution.
 
 // Création de la Todo Element : Dans displayTodos.js, nous créons une liste de todos et affichons chaque todo en appelant createTodoElement. Cette fonction crée un élément li pour chaque todo et y ajoute un bouton de suppression créé par createDelBtn.
 // Création du Bouton de Suppression : Dans deleteTodos.js, createDelBtn prend index comme argument et crée un bouton de suppression. L’écouteur d’événement de clic est une closure qui capture index et appelle deleteTodo avec cet index lorsqu’on clique sur le bouton.
